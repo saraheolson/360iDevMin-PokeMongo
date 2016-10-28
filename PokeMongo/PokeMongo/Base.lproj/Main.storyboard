@@ -1,26 +1,122 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="11E-LW-dVF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="TVY-xU-7fD">
+            <objects>
+                <viewController id="1mF-0T-SMZ" customClass="MainViewController" customModule="PokeMongo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vdx-Dt-7vZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="x55-Be-LsX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8ml-VJ-itq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="qNh-WU-DGI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ul2-ob-gKa">
+                                <rect key="frame" x="114" y="589" width="147" height="48"/>
+                                <color key="backgroundColor" red="0.55396089967041862" green="0.93377590673575128" blue="0.15556852746156322" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
+                                <state key="normal" title="Play Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="yuQ-Cz-XK3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="x55-Be-LsX" firstAttribute="top" secondItem="qNh-WU-DGI" secondAttribute="bottom" id="44u-9D-9kj"/>
+                            <constraint firstItem="qNh-WU-DGI" firstAttribute="leading" secondItem="8ml-VJ-itq" secondAttribute="leading" id="6cK-gq-ezs"/>
+                            <constraint firstAttribute="trailing" secondItem="qNh-WU-DGI" secondAttribute="trailing" id="Nie-Va-Wgy"/>
+                            <constraint firstItem="x55-Be-LsX" firstAttribute="top" secondItem="ul2-ob-gKa" secondAttribute="bottom" constant="30" id="UxX-NA-quX"/>
+                            <constraint firstItem="ul2-ob-gKa" firstAttribute="centerX" secondItem="qNh-WU-DGI" secondAttribute="centerX" id="aAk-n1-FLx"/>
+                            <constraint firstItem="qNh-WU-DGI" firstAttribute="top" secondItem="vdx-Dt-7vZ" secondAttribute="bottom" id="vbc-fU-tAT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8En-qp-JqY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ds-h7-7Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712.79999999999995" y="115.59220389805098"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="PokeMongo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
-                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="4Y2-9b-d2H">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eK-Hh-PiI" userLabel="GameView" customClass="SKView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Y2-9b-d2H" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" id="2PT-rP-O9k"/>
+                            <constraint firstAttribute="trailing" secondItem="4Y2-9b-d2H" secondAttribute="trailing" id="4SP-fy-XEf"/>
+                            <constraint firstItem="0eK-Hh-PiI" firstAttribute="top" secondItem="3se-qz-xqx" secondAttribute="top" id="Gzr-5U-tPK"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="4Y2-9b-d2H" secondAttribute="bottom" id="WfB-os-01w"/>
+                            <constraint firstAttribute="trailing" secondItem="0eK-Hh-PiI" secondAttribute="trailing" id="joj-Up-pP0"/>
+                            <constraint firstItem="4Y2-9b-d2H" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="k5U-Ju-pyQ"/>
+                            <constraint firstItem="0eK-Hh-PiI" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="ovG-Yg-1G4"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="0eK-Hh-PiI" secondAttribute="bottom" id="sy5-XN-Ngc"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="55c-wg-LKl"/>
+                    <connections>
+                        <outlet property="gameView" destination="0eK-Hh-PiI" id="BIo-Hp-Xos"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1513" y="117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gfz-Zs-Yqm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="11E-LW-dVF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3bk-wn-Ym0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1mF-0T-SMZ" kind="relationship" relationship="rootViewController" id="Ql7-sG-iBc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqu-EG-7ex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-137" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="640" height="1136"/>
+        <image name="Splash" width="640" height="1136"/>
+    </resources>
 </document>

@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C6F358D1DC3605700AD9B9A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F358B1DC3605700AD9B9A /* GameViewController.swift */; };
+		0C6F358E1DC3605700AD9B9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F358C1DC3605700AD9B9A /* MainViewController.swift */; };
+		0C6F35921DC3607400AD9B9A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F35901DC3607400AD9B9A /* GameScene.sks */; };
+		0C6F35931DC3607400AD9B9A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F35911DC3607400AD9B9A /* GameScene.swift */; };
 		0CC327701DC35DA500E1E9C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC3276F1DC35DA500E1E9C7 /* AppDelegate.swift */; };
-		0CC327721DC35DA500E1E9C7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CC327711DC35DA500E1E9C7 /* GameScene.sks */; };
-		0CC327741DC35DA500E1E9C7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0CC327731DC35DA500E1E9C7 /* Actions.sks */; };
-		0CC327761DC35DA500E1E9C7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC327751DC35DA500E1E9C7 /* GameScene.swift */; };
-		0CC327781DC35DA500E1E9C7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC327771DC35DA500E1E9C7 /* GameViewController.swift */; };
 		0CC3277B1DC35DA500E1E9C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CC327791DC35DA500E1E9C7 /* Main.storyboard */; };
 		0CC3277D1DC35DA500E1E9C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CC3277C1DC35DA500E1E9C7 /* Assets.xcassets */; };
 		0CC327801DC35DA500E1E9C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CC3277E1DC35DA500E1E9C7 /* LaunchScreen.storyboard */; };
@@ -37,12 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C6F358B1DC3605700AD9B9A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ViewControllers/GameViewController.swift; sourceTree = "<group>"; };
+		0C6F358C1DC3605700AD9B9A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
+		0C6F35901DC3607400AD9B9A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = Scenes/GameScene.sks; sourceTree = "<group>"; };
+		0C6F35911DC3607400AD9B9A /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = Scenes/GameScene.swift; sourceTree = "<group>"; };
 		0CC3276C1DC35DA500E1E9C7 /* PokeMongo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMongo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CC3276F1DC35DA500E1E9C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0CC327711DC35DA500E1E9C7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		0CC327731DC35DA500E1E9C7 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		0CC327751DC35DA500E1E9C7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		0CC327771DC35DA500E1E9C7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		0CC3277A1DC35DA500E1E9C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CC3277C1DC35DA500E1E9C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CC3277F1DC35DA500E1E9C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +80,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C6F358A1DC3604700AD9B9A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F358B1DC3605700AD9B9A /* GameViewController.swift */,
+				0C6F358C1DC3605700AD9B9A /* MainViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0C6F358F1DC3606700AD9B9A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F35901DC3607400AD9B9A /* GameScene.sks */,
+				0C6F35911DC3607400AD9B9A /* GameScene.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		0C6F35941DC3607F00AD9B9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0CC3277E1DC35DA500E1E9C7 /* LaunchScreen.storyboard */,
+				0CC327791DC35DA500E1E9C7 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		0CC327631DC35DA400E1E9C7 = {
 			isa = PBXGroup;
 			children = (
@@ -103,14 +130,11 @@
 		0CC3276E1DC35DA500E1E9C7 /* PokeMongo */ = {
 			isa = PBXGroup;
 			children = (
+				0C6F358F1DC3606700AD9B9A /* Scenes */,
+				0C6F358A1DC3604700AD9B9A /* ViewControllers */,
+				0C6F35941DC3607F00AD9B9A /* Views */,
 				0CC3276F1DC35DA500E1E9C7 /* AppDelegate.swift */,
-				0CC327711DC35DA500E1E9C7 /* GameScene.sks */,
-				0CC327731DC35DA500E1E9C7 /* Actions.sks */,
-				0CC327751DC35DA500E1E9C7 /* GameScene.swift */,
-				0CC327771DC35DA500E1E9C7 /* GameViewController.swift */,
-				0CC327791DC35DA500E1E9C7 /* Main.storyboard */,
 				0CC3277C1DC35DA500E1E9C7 /* Assets.xcassets */,
-				0CC3277E1DC35DA500E1E9C7 /* LaunchScreen.storyboard */,
 				0CC327811DC35DA500E1E9C7 /* Info.plist */,
 			);
 			path = PokeMongo;
@@ -244,11 +268,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6F35921DC3607400AD9B9A /* GameScene.sks in Resources */,
 				0CC3277B1DC35DA500E1E9C7 /* Main.storyboard in Resources */,
-				0CC327721DC35DA500E1E9C7 /* GameScene.sks in Resources */,
 				0CC3277D1DC35DA500E1E9C7 /* Assets.xcassets in Resources */,
 				0CC327801DC35DA500E1E9C7 /* LaunchScreen.storyboard in Resources */,
-				0CC327741DC35DA500E1E9C7 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CC327761DC35DA500E1E9C7 /* GameScene.swift in Sources */,
-				0CC327781DC35DA500E1E9C7 /* GameViewController.swift in Sources */,
+				0C6F358E1DC3605700AD9B9A /* MainViewController.swift in Sources */,
+				0C6F358D1DC3605700AD9B9A /* GameViewController.swift in Sources */,
+				0C6F35931DC3607400AD9B9A /* GameScene.swift in Sources */,
 				0CC327701DC35DA500E1E9C7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saraheolson.PokeMongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -446,6 +471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saraheolson.PokeMongo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -526,6 +552,7 @@
 				0CC3279C1DC35DA500E1E9C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CC3279D1DC35DA500E1E9C7 /* Build configuration list for PBXNativeTarget "PokeMongoTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +561,7 @@
 				0CC3279F1DC35DA500E1E9C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CC327A01DC35DA500E1E9C7 /* Build configuration list for PBXNativeTarget "PokeMongoUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +570,7 @@
 				0CC327A21DC35DA500E1E9C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
