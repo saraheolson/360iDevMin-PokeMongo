@@ -14,14 +14,43 @@ class GameScene: SKScene {
     // So we can keep track of our monster!
     var monster: SKSpriteNode?
 
+    // So we can keep track of our ball!
+    var ball: SKSpriteNode?
+
     override func sceneDidLoad() {
         
         // If we don't already have a monster, create one.
         if monster == nil {
             createMonster()
         }
+        
+        // Add a ball to the scene
+        if ball == nil {
+            createBall()
+        }
     }
     
+    // MARK: - Ball functions
+    
+    /**
+     * Create a ball node and add it to the scene.
+     */
+    func createBall() {
+        
+        // Create the ball node
+        ball = SKSpriteNode(imageNamed: "Ball")
+        if let ball = ball {
+            
+            // Set position and scale
+            ball.position = CGPoint(x: 0, y: 100)
+            ball.zPosition = 2
+            ball.scale(to: CGSize(width: 50, height: 50))
+            
+            // Add to the scene
+            addChild(ball)
+        }
+    }
+
     
     // MARK: - Monster functions
     
