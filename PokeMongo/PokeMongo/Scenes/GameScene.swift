@@ -130,6 +130,18 @@ class GameScene: SKScene {
      */
     override func update(_ currentTime: TimeInterval) {
         
+        guard let ball = self.ball else {
+            return
+        }
+        
+        // Check to see if the ball node has left the scene bounds
+        if (ball.position.x > self.size.width/2 + ball.size.width/2 ||
+            ball.position.x < -(self.size.width/2 + ball.size.width/2) ||
+            ball.position.y > self.size.height + ball.size.height) {
+            
+            // The ball is outside the bounds of the visible view
+            resetBall()
+        }
     }
     
     
@@ -159,5 +171,23 @@ class GameScene: SKScene {
             // Add to the scene
             addChild(ball)
         }
+    }
+    
+    /**
+     * Reset the ball to the default position.
+     */
+    func resetBall() {
+        
+        // Remove the current ball from the scene
+        ball?.removeAllActions()
+        ball?.removeFromParent()
+        ball = nil
+        
+        // Reset touch locations
+        startTouchLocation = CGPoint.zero
+        endTouchLocation = CGPoint.zero
+        
+        // Create a new ball and add to the scene
+        createBall()
     }
 }
