@@ -118,6 +118,11 @@ class GameScene: SKScene {
         
         // Record the end of the touch event
         endTouchLocation = touches.first!.location(in: self)
+        
+        // Continue the ball's movement along the same path as the touch gesture
+        let factor: CGFloat = 50
+        let vector = CGVector(dx: factor * (endTouchLocation.x - startTouchLocation.x), dy: factor * (endTouchLocation.y - startTouchLocation.y))
+        ball?.physicsBody?.applyImpulse(vector)
     }
     
     /**
@@ -144,6 +149,13 @@ class GameScene: SKScene {
             ball.zPosition = 2
             ball.scale(to: CGSize(width: 50, height: 50))
             
+            // Add physics
+            ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.frame.size.width/2)
+            ball.physicsBody?.isDynamic = true
+            ball.physicsBody?.affectedByGravity = false
+            ball.physicsBody?.allowsRotation = false
+            ball.physicsBody?.mass = 50
+
             // Add to the scene
             addChild(ball)
         }
