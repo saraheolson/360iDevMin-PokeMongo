@@ -46,6 +46,8 @@ class GameScene: SKScene {
         
         if let monster = self.monster {
             
+            monster.name = "monster"
+            
             monster.position = CGPoint(x: 0, y: frame.height/2)
             monster.zPosition = 2
             
@@ -87,7 +89,13 @@ class GameScene: SKScene {
         monster.run(repeatMovesForever)
     }
 
-
+    func monsterHit() {
+        
+        monster?.removeAllActions()
+        monster?.removeFromParent()
+        monster = nil
+    }
+    
     // MARK: - Touch gesture methods
     
     /**
@@ -142,6 +150,8 @@ class GameScene: SKScene {
             // The ball is outside the bounds of the visible view
             resetBall()
         }
+        
+        checkCollisions()
     }
     
     
@@ -155,6 +165,8 @@ class GameScene: SKScene {
         // Create the ball node
         ball = SKSpriteNode(imageNamed: "Ball")
         if let ball = ball {
+            
+            ball.name = "ball"
             
             // Set position and scale
             ball.position = CGPoint(x: 0, y: 100)
@@ -189,5 +201,17 @@ class GameScene: SKScene {
         
         // Create a new ball and add to the scene
         createBall()
+    }
+    
+    // MARK: - Collision detection
+    func checkCollisions() {
+        
+        guard let ball = self.ball, let monster = self.monster else {
+            return
+        }
+        
+        if ball.frame.insetBy(dx: 20, dy: 20).intersects(monster.frame) {
+            monsterHit()
+        }
     }
 }
