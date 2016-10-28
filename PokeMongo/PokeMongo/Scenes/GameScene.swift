@@ -27,7 +27,11 @@ class GameScene: SKScene {
     
     func createMonster() {
         
-        monster = SKSpriteNode(imageNamed: "PurpleMonster1")
+        // Create the monster from an atlas instead of an image
+        let textureAtlas = SKTextureAtlas(named: "PurpleMonster.atlas")
+        let spriteArray = [textureAtlas.textureNamed("PurpleMonster1"),
+                           textureAtlas.textureNamed("PurpleMonster2")]
+        monster = SKSpriteNode(texture: spriteArray[0])
         
         if let monster = self.monster {
             
@@ -36,6 +40,11 @@ class GameScene: SKScene {
             
             moveMonster()
             
+            // Animate our monster
+            let animateAction = SKAction.animate(with: spriteArray, timePerFrame: 0.2)
+            let repeatAnimation = SKAction.repeatForever(animateAction)
+            monster.run(repeatAnimation)
+
             addChild(monster)
         }
     }
@@ -66,6 +75,7 @@ class GameScene: SKScene {
         // Runs the repeated group of actions
         monster.run(repeatMovesForever)
     }
+
 
     // MARK: - Touch gesture methods
     
