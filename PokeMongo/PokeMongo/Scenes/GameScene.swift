@@ -11,8 +11,33 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    // So we can keep track of our monster!
+    var monster: SKSpriteNode?
+
     override func sceneDidLoad() {
+        
+        // If we don't already have a monster, create one.
+        if monster == nil {
+            createMonster()
+        }
     }
+    
+    
+    // MARK: - Monster functions
+    
+    func createMonster() {
+        
+        monster = SKSpriteNode(imageNamed: "PurpleMonster1")
+        
+        if let monster = self.monster {
+            
+            monster.position = CGPoint(x: 0, y: frame.height/2)
+            monster.zPosition = 2
+            
+            addChild(monster)
+        }
+    }
+
     
     // MARK: - Touch gesture methods
     
