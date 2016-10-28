@@ -9,11 +9,36 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 class GameViewController: UIViewController {
 
     @IBOutlet var gameView: SKView!
+    @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var backgroundView: UIImageView!
+    @IBOutlet weak var arModeButton: UIButton!
     
+    // True if we're viewing in AR Mode
+    var isARMode = false
+    
+    // True if camera has been configured
+    var isCameraConfigured = false
+    
+    // For real-time data capture from camera
+    private let avCaptureSession: AVCaptureSession = AVCaptureSession()
+    
+    // The camera preview layer
+    lazy private var previewLayer: AVCaptureVideoPreviewLayer = { [unowned self] in
+        let previewLayer = AVCaptureVideoPreviewLayer(session: self.avCaptureSession)
+        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        return previewLayer!
+        }()
+    
+    // Defined error
+    private enum AVFoundationError: Error {
+        case ConfigurationFailed
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,5 +91,112 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    // MARK: - Actions
+    @IBAction func tappedARModeButton(_ sender: AnyObject) {
+        
+        isARMode = !isARMode
+        
+        if isARMode {
+            
+            // Ask for permission to use the camera
+            askForCameraPermissions()
+            
+            arModeButton.setTitle("Image Mode", for: .normal)
+            
+        } else {
+            
+            arModeButton.setTitle("AR Mode", for: .normal)
+            
+            // Stop the camera session
+            if avCaptureSession.isRunning == true {
+                avCaptureSession.stopRunning()
+            }
+        }
+        
+        // Hide/display background and camera view
+        self.backgroundView.isHidden = isARMode
+        self.cameraView.isHidden = !isARMode
+    }
+
+    
+    // MARK: - Camera permissions
+    
+    func askForCameraPermissions() {
+        
+        // We need to ask the user for permission to use the camera.
+        switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) {
+        case .authorized:
+            print("Authorized")
+            self.displayCameraView()
+            break
+        case .denied:
+            print("Denied")
+        case .notDetermined:
+            print("Ask for permission")
+            
+            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { granted in
+                
+                if granted {
+                    print("Show camera view")
+                    self.displayCameraView()
+                } else {
+                    print("Denied")
+                }
+            }
+        case .restricted:
+            // We don't have access to the camera. Nothing we can do here.
+            print("No camera access")
+        }
+    }
+    
+    // MARK: Scanning
+    func displayCameraView() {
+        
+        // Return if we're not authorized
+        guard AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == .authorized else {
+            return
+        }
+        
+        // Configure camera if not done already
+        if !isCameraConfigured {
+            configureCameraView()
+        }
+        
+        // Start capturing data
+        if avCaptureSession.isRunning == false {
+            avCaptureSession.startRunning()
+        }
+    }
+    
+    func configureCameraView() {
+        
+        // Configure AV Capture Session
+        do {
+            let videoCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+            
+            let videoInput: AVCaptureDeviceInput
+            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+            if avCaptureSession.canAddInput(videoInput) {
+                avCaptureSession.addInput(videoInput)
+            } else {
+                throw AVFoundationError.ConfigurationFailed
+            }
+            
+        } catch {
+            debugPrint("Something went wrong")
+            debugPrint(error)
+            return
+        }
+        
+        // Set up our layer
+        previewLayer.frame = cameraView.bounds
+        if let videoPreviewView = cameraView {
+            videoPreviewView.layer.addSublayer(previewLayer)
+        }
+        
+        // Camera has been configured
+        isCameraConfigured = true
     }
 }
