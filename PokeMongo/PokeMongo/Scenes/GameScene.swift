@@ -90,18 +90,32 @@ class GameScene: SKScene {
     }
 
     func monsterHit() {
-        
-        monster?.removeAllActions()
-        monster?.removeFromParent()
-        monster = nil
 
-        createMonster()
+        guard let monster = self.monster else {
+            return
+        }
+
+        // Remove monster from scene
+        monster.removeAllActions()
+        monster.removeFromParent()
         
-        // Wait 1 second to display it.
-        monster?.isHidden = true
+        // Explode our monster
+        let spark: SKEmitterNode = SKEmitterNode(fileNamed: "SparkParticle")!
+        spark.position = monster.position
+        spark.particleColor = UIColor.purple
+        addChild(spark)
+
+        // Create a new monster
+        self.monster = nil
+        
         let waitAction = SKAction.wait(forDuration: 1)
-        monster?.run(waitAction) {
-            self.monster?.isHidden = false
+        spark.run(waitAction) {
+            
+            // Display the monster
+            self.createMonster()
+            
+            // Remove spark from scene
+            spark.removeFromParent()
         }
     }
     

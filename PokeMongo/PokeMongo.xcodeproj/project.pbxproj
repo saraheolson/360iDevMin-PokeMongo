@@ -11,6 +11,8 @@
 		0C6F358E1DC3605700AD9B9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F358C1DC3605700AD9B9A /* MainViewController.swift */; };
 		0C6F35921DC3607400AD9B9A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F35901DC3607400AD9B9A /* GameScene.sks */; };
 		0C6F35931DC3607400AD9B9A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F35911DC3607400AD9B9A /* GameScene.swift */; };
+		0C6F35981DC387E700AD9B9A /* SparkParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F35961DC387E700AD9B9A /* SparkParticle.sks */; };
+		0C6F35991DC387E700AD9B9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F35971DC387E700AD9B9A /* Assets.xcassets */; };
 		0CC327701DC35DA500E1E9C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC3276F1DC35DA500E1E9C7 /* AppDelegate.swift */; };
 		0CC3277B1DC35DA500E1E9C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CC327791DC35DA500E1E9C7 /* Main.storyboard */; };
 		0CC3277D1DC35DA500E1E9C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CC3277C1DC35DA500E1E9C7 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		0C6F358C1DC3605700AD9B9A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewControllers/MainViewController.swift; sourceTree = "<group>"; };
 		0C6F35901DC3607400AD9B9A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = Scenes/GameScene.sks; sourceTree = "<group>"; };
 		0C6F35911DC3607400AD9B9A /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = Scenes/GameScene.swift; sourceTree = "<group>"; };
+		0C6F35961DC387E700AD9B9A /* SparkParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = SparkParticle.sks; path = Particles/SparkParticle.sks; sourceTree = "<group>"; };
+		0C6F35971DC387E700AD9B9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Particles/Assets.xcassets; sourceTree = "<group>"; };
 		0CC3276C1DC35DA500E1E9C7 /* PokeMongo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeMongo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CC3276F1DC35DA500E1E9C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CC3277A1DC35DA500E1E9C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		0C6F35951DC387B000AD9B9A /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F35961DC387E700AD9B9A /* SparkParticle.sks */,
+				0C6F35971DC387E700AD9B9A /* Assets.xcassets */,
+			);
+			name = Particles;
+			sourceTree = "<group>";
+		};
 		0CC327631DC35DA400E1E9C7 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +143,7 @@
 		0CC3276E1DC35DA500E1E9C7 /* PokeMongo */ = {
 			isa = PBXGroup;
 			children = (
+				0C6F35951DC387B000AD9B9A /* Particles */,
 				0C6F358F1DC3606700AD9B9A /* Scenes */,
 				0C6F358A1DC3604700AD9B9A /* ViewControllers */,
 				0C6F35941DC3607F00AD9B9A /* Views */,
@@ -272,6 +286,8 @@
 				0CC3277B1DC35DA500E1E9C7 /* Main.storyboard in Resources */,
 				0CC3277D1DC35DA500E1E9C7 /* Assets.xcassets in Resources */,
 				0CC327801DC35DA500E1E9C7 /* LaunchScreen.storyboard in Resources */,
+				0C6F35991DC387E700AD9B9A /* Assets.xcassets in Resources */,
+				0C6F35981DC387E700AD9B9A /* SparkParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
