@@ -94,6 +94,15 @@ class GameScene: SKScene {
         monster?.removeAllActions()
         monster?.removeFromParent()
         monster = nil
+
+        createMonster()
+        
+        // Wait 1 second to display it.
+        monster?.isHidden = true
+        let waitAction = SKAction.wait(forDuration: 1)
+        monster?.run(waitAction) {
+            self.monster?.isHidden = false
+        }
     }
     
     // MARK: - Touch gesture methods
